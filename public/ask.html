@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autistic Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="icons/rtlogo.png" alt="Logo" class="header-logo">
+        </div>
+        <div class="header-right">
+            <a href="index.html" class="nav-button">about</a>
+            <a href="train.html" class="nav-button">train</a>
+        </div>    
+    </header>
+
+    <div class="section">
+        <h1>Autistic Intelligence (A.I.)</h1>
+        
+        <!-- Chat Form -->
+        <p>I'm an autistic <-> allistic translator!</p>
+        <form id="gptForm">
+            <!-- <label for="prompt">y</label><br> -->
+            <textarea id="prompt" rows="4" cols="50" placeholder="what would you like to understand better?"></textarea><br>
+            <button type="submit" class ="button-form">submit</button>
+        </form>
+
+        <div id="response"></div>
+    </div>
+
+    <script src="app-gpt.js"></script>
+</body>
+
+</html>

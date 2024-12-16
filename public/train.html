@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autistic Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="icons/rtlogo.png" alt="Logo" class="header-logo">
+        </div>
+        <div class="header-right">
+            <a href="index.html" class="nav-button">about</a>
+            <a href="ask.html" class="nav-button">translate</a>
+        </div>
+    </header>
+
+    <div class="training-container">
+        <div class="training-half">
+            <h1>Autistic Intelligence (A.I.)</h1>
+            <div id="identityButtons">
+                <h2>i identify as</h2>
+                <button id="autisticButton" class="button-identity">more autistic</button>
+                <button id="allisticButton" class="button-identity">more allistic</button>
+            </div>
+            <p id="identityFeedback"></p>
+            <!-- Training Data Form -->
+            <p>Submit Training Data</p>
+            <form id="trainingForm">
+                <textarea id="trainingPrompt" rows="4" cols="50"
+                    placeholder="enter the input or question here..."></textarea><br><br>
+                <textarea id="trainingCompletion" rows="4" cols="50"
+                    placeholder="enter the desired response here..."></textarea><br><br>
+
+                <button type="submit" class="button-form">submit training data</button>
+            </form>
+            <div id="trainingResponse"></div>
+        </div>
+
+        <div class="training-half">
+            <button id="viewTrainingData" class="button-form">view training data</button>
+            <div id="trainingDataContainer"></div>
+        </div>
+    </div>
+
+    <script src="app-train.js"></script>
+</body>
+
+</html>

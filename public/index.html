@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autistic Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <img src="icons/rtlogo.png" alt="Logo" class="header-logo">
+        </div>
+        <div class="header-right">
+            <a href="ask.html" class="nav-button">translate</a>
+            <a href="train.html" class="nav-button">train</a>
+        </div>
+    </header>
+
+    <div class="section" id="about-text">
+        <p class="typing line1">welcome to (a)utistic (i)ntelligence, otherwise known as (AI).</p>
+        <p class="typing line2">this is a translator between autistic and allistic interpretations, powered by gpt-4.
+        </p>
+
+        <button class="button" data-target="#why-section">but why?</button>
+    </div>
+
+    <div class="section" id="why-section">
+        <p>if autism exists on a spectrum, then we are all "on the spectrum." it’s not about being right or wrong, this
+            or that- it’s just about opening up towards wanting to understand each other. (a)utistic (i)ntelligence (AI) aims to act as a bridge, or translator, between autistic and allistic interpretations of questions and statements. </p>
+
+        <div id="button-container">
+            <a href="ask.html" class="hidden-button">translate something</a>
+            <a href="train.html" class="hidden-button">help train (AI)</a>
+        </div>
+    </div>
+
+    <!-- jae kim gradient shader, minor edits -->
+    <canvas class="my-canvas"></canvas>
+    <script type="module">
+        import { sculptToMinimalRenderer } from 'https://unpkg.com/shader-park-core/dist/shader-park-core.esm.js';
+        import { spCode } from './spCode.js';
+        let canvas = document.querySelector('.my-canvas');
+
+        let state = {
+            buttonHover: 0.0,
+            currButtonHover: 0.0,
+            click: 0.0,
+            currClick: 0.0
+        };
+
+        // This converts your Shader Park code into a shader and renders it to the my-canvas element
+        sculptToMinimalRenderer(canvas, spCode, () => {
+            state.currButtonHover = state.currButtonHover * .999 + state.buttonHover * .001;
+            state.currClick = state.currClick * .92 + state.click * .08;
+            return {
+                'buttonHover': state.currButtonHover,
+                'click': state.currClick
+            };
+        });
+
+        // This converts your Shader Park code into a shader and renders it to the my-canvas element
+        // sculptToMinimalRenderer(canvas, spCode, () => ({mousePress: 0}));
+    </script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

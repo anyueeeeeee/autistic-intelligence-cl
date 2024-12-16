@@ -1,0 +1,21 @@
+{
+  "name": "autistic_intelligence",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "anyue",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "lowdb": "^7.0.1",
+    "openai": "^4.76.0",
+    "readline-sync": "^1.4.10",
+    "socket.io": "^4.8.1"
+  }
+}

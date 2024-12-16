@@ -1,0 +1,370 @@
+* {
+    background: transparent;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.my-canvas {
+    position: fixed;
+    background: transparent;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 120%; 
+    height: 120%; 
+    z-index: -1; 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+    font-size: 14px;
+    background-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Space out left and right sections */
+    align-items: center; /* Vertically align items */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem; /* Adjust padding as needed */
+    background-color: transparent;
+    z-index: 5000;
+    box-sizing: border-box;
+}
+
+/* Left Section (Logo) */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    width: 5rem; 
+    height: auto;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right; 
+    text-align: right;
+}
+
+.section {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: "Roboto Mono";
+    font-weight: 400;
+    font-size: 1rem;
+    color: white; 
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-family: "Roboto Mono";
+    font-weight: 100;
+    font-size: 0.85rem;
+    color: white;
+    text-align: center;
+    line-height: 1.75rem;
+}
+
+p {
+    font-family: "Roboto Mono";
+    font-weight: 200;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    line-height: 1.75rem;
+}
+
+#about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#why-section p {
+    visibility: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+}
+
+.typing {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.line1 {
+    width: 0; /* Start with no visible width */
+    animation: typing 3s steps(30, end) forwards; 
+}
+
+.line2 {
+    width: 0; /* Start with no visible width */
+    animation: typing 4s steps(40, end) 3s forwards; 
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100ch; 
+    }
+}
+
+/* Button Styling */
+
+.button {
+    margin-top: 0.75rem;
+    font-family: "Roboto Mono";
+    font-weight: 200;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid white;
+    opacity: 0;
+    animation: fadeIn 0.1s forwards, blink 0.25s 2 linear 6.5s; 
+    animation-delay: 7s; 
+    padding: 0.5rem 1rem;
+}
+
+.button:hover {
+    background-color: white; 
+    color: black; 
+}
+
+.hidden-button {
+    display: none; 
+    margin-top: 0.75rem;
+    font-family: "Roboto Mono";
+    font-weight: 200;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid white;
+    opacity: 0;
+    animation: fadeIn 0.1s forwards, blink 0.25s 2 linear 6.5s; 
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.hidden-button:hover {
+    background-color: white; 
+    color: black; 
+}
+
+.button-form {
+    margin-bottom: 1rem;
+    font-family: "Roboto Mono";
+    font-weight: 100;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.button-form:hover {
+    background-color: white; 
+    color: black; 
+}
+
+.button-identity {
+    margin-bottom: 1rem;
+    font-family: "Roboto Mono";
+    font-weight: 100;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.button-identity:hover {
+    background-color: white; 
+    color: black; 
+}
+
+.button-identity.clicked {
+    background-color: white; 
+    color: black; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes blink {
+    0% {
+        border-color: #fff;
+    }
+    25% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #fff;
+    }
+    75% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: #fff;
+    }
+}
+
+.nav-button {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 200;
+    font-size: 1rem;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    z-index: 5000;
+}
+
+.nav-button:hover {
+    color: rgb(46, 254, 60);
+}
+
+/* Ask Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1rem;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.75rem;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    resize: vertical;
+    margin-bottom: 1rem;
+}
+
+textarea::placeholder {
+    color: #aaa;
+}
+
+#gptForm {
+    width: 65vw;
+    margin-top: 3rem;
+}
+
+#response {
+    width: 65vw;
+    margin-top: 1.25rem;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.85rem;
+    text-align: center;
+    min-height: 50px; 
+}
+
+textarea::placeholder {
+    color: #aaa; 
+    font-style: italic;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Train Form Styling */
+
+.training-container {
+    display: flex;
+    flex-direction: row; 
+    width: 100%; 
+    height: 100vh; 
+}
+
+.training-half {
+    flex: 1; 
+    padding: 2rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    border-right: 0.85px solid white; 
+}
+
+#trainingDataContainer {
+    max-height: 60vh; 
+    max-width: 40vw;
+    overflow-y: auto; 
+    margin-top: 3rem;
+    padding: 1rem; 
+    font-family: "Roboto Mono", monospace;
+    font-size: 0.85rem;
+}
+
+#identityButtons {
+    margin-top: 4rem;
+    margin-bottom: 3.5rem;
+}
+
+#trainingForm {
+    line-height: 0.25rem;
+}
+
+#trainingCompletion {
+    margin-bottom: 1rem;
+}
+
+#viewTrainingData {
+    margin: 0rem;
+}
+
+#trainingDataContainer hr {
+    width: 10px;
+    border-top: 1px solid white; 
+    margin: 0.5rem auto; 
+    opacity: 0.5; 
+}
